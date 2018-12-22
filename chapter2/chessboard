@@ -1,0 +1,21 @@
+/*
+  Write a program that creates a string that represents an 8×8 grid, using newline
+  characters to separate lines. At each position of the grid there is either a space
+  or a "#" character. The characters should form a chessboard.
+*/
+
+let chessboard = '';
+for (let i = 0; i < 56; i++) {
+  if (i == 0) {
+    chessboard = chessboard + ' ';
+  }
+  else if (i%7 == 0 && i%14 == 0) {
+    chessboard = chessboard + ' ' + '\n' + ' ';
+  }
+  else if (i%7 == 0) {
+    chessboard = chessboard + '#' + '\n' + '#';
+  }
+  else if (i%2 == 0) chessboard = chessboard + ' ';
+  else chessboard = chessboard + '#';
+}
+console.log(chessboard);
