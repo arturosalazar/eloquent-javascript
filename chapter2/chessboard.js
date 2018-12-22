@@ -4,19 +4,29 @@
   or a "#" character. The characters should form a chessboard.
 */
 
-let size = 8;
+let lengthsize = 8;
 let chessboard = '';
-for (let i = 0; i < size*size-size; i++) {
-  if (i == 0) {
-    chessboard = chessboard + ' ';
+
+//for loop to keep track of number of lines
+for (let i = 0; i < lengthsize; i++) {
+  //determine if even or odd number line. 
+  //Start row with a ' ' and alternate '#',' ','#'from there if an even numbered line
+  if (i % 2 == 0) {
+    for (let j = 0; j < lengthsize; j++) {
+      if (j == 0) chessboard += ' ';
+      else if (j % 2 == 0) chessboard += ' ';
+      else chessboard += '#';
+    }
+    chessboard += '\n';
+  } 
+  //Start row with a '#' and alternate ' ','#',' ' from there if an odd numbered line
+  else {
+    for (let j = 0; j < lengthsize; j++) {
+      if (j == 0) chessboard += '#';
+      else if (j % 2 == 0) chessboard += '#';
+      else chessboard += ' ';
+    }
+    chessboard += '\n';
   }
-  else if (i%(size-1) == 0 && i%((size-1)*2) == 0) {
-    chessboard = chessboard + ' ' + '\n' + ' ';
-  }
-  else if (i%(size-1) == 0) {
-    chessboard = chessboard + '#' + '\n' + '#';
-  }
-  else if (i%2 == 0) chessboard = chessboard + ' ';
-  else chessboard = chessboard + '#';
 }
 console.log(chessboard);
