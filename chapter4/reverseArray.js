@@ -21,3 +21,16 @@ function reverseArray (origArray) {
   }
   return reversed;
 }
+
+//reverse the modify the original array 
+function reverseArrayInPlace (origArray) {
+  for (i = 0; i < origArray.length/2; i++){
+    //create a variable to hold what is currently in our working space
+    let hold = origArray[i];
+    //get the value in the opposite space and place it in the working space
+    origArray[i] = origArray[origArray.length-1-i];
+    //place the held value in the opposite space  
+    origArray[origArray.length-1-i] = hold;
+  }
+  return origArray;
+}
