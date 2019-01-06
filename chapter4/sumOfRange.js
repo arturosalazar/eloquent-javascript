@@ -14,7 +14,10 @@
   produces [5, 4, 3, 2].
 */
 
-function range (start, finish, step = 1){  
+function range (start, finish, step = 1){
+  if (start < finish && step <0) return "Invalid step amount: If start is less than finish, step must be positive"
+  if (start > finish && step > 0) return "Invalid step amount: If start is greater than finish, step must be negative"
+  
   let rangeArray = [];
   if (start < finish){
     for (i = start; i <= finish; i+=step){
