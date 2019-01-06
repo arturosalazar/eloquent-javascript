@@ -24,7 +24,7 @@ function reverseArray (origArray) {
 
 //reverse the modify the original array 
 function reverseArrayInPlace (origArray) {
-  for (i = 0; i < origArray.length/2; i++){
+  for (i = 0; i < Math.floor(origArray.length/2); i++){
     //create a variable to hold what is currently in our working space
     let hold = origArray[i];
     //get the value in the opposite space and place it in the working space
