@@ -23,8 +23,6 @@ function arrayToList(arr){
   return list;
 }
 
-
-
 //listToArray
 function listToArray(list){
   let arr = [];
@@ -36,9 +34,10 @@ function listToArray(list){
   return arr;
 }
 
-
 //prepend
-
+function prepend(element,list){
+  return list = {value:element, rest:list}
+}
 
 //nth
 
