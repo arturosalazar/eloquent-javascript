@@ -43,11 +43,14 @@ function deepComparison (value1,value2){
 
   //for loop to deep check each property
   for (i = 0; i < value1Array.length; i++){
-    if (typeof(value1[value1Array[i]]) === "object" && typeof(value2[value2Array[i]]) === "object") {
-      if (deepComparison(value1[value1Array[i]],value2[value2Array[i]])) continue;
+    let property1 = value1[value1Array[i]];
+    let property2 = value2[value2Array[i]]
+    
+    if (typeof(property1) === "object" && typeof(property2) === "object") {
+      if (deepComparison(property1,property2)) continue;
       else return false;
     }
-    else if(value1[value1Array[i]] !== value2[value2Array[i]]) return false;
+    else if(property1 !== property2) return false;
   }
   return true
 }
