@@ -40,4 +40,12 @@ function prepend(element,list){
 }
 
 //nth
+function nth(list, number){
+  let element;
+  for (i = 0; i <= number; i++){
+    element = list.value;
+    list = list.rest;
+  }
+  return element; 
+}
 
