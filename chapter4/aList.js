@@ -15,20 +15,20 @@
 */
 
 //The gist of my solutions is that to build a list, you need to start with
-//the innermost object, then build the rest of the list by 
+//the innermost object, then build the rest of the list by
 //having the next object's rest property point to the current list
 
 //arrayToList
 function arrayToList(arr){
   let list = null;
   for (i = arr.length-1; i >= 0; i--){
-	   list = {value: arr[i], rest: list};
+    list = prepend(arr[i], list);
+    //list = {value: arr[i], rest: list};
   }
   return list;
 }
 
-//listToArray - we basically go in the reverse order by placing each value in 
-//the object in the array then taking that object off the list
+//listToArray
 function listToArray(list){
   let arr = [];
   while (list.rest = list.rest){
