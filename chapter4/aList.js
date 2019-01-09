@@ -14,6 +14,10 @@
   If you haven’t already, also write a recursive version of nth.
 */
 
+//The gist of my solutions is that to build a list, you need to start with
+//the innermost object, then build the rest of the list by 
+//having the next object's rest property point to the current list
+
 //arrayToList
 function arrayToList(arr){
   let list = null;
@@ -23,7 +27,8 @@ function arrayToList(arr){
   return list;
 }
 
-//listToArray
+//listToArray - we basically go in the reverse order by placing each value in 
+//the object in the array then taking that object off the list
 function listToArray(list){
   let arr = [];
   while (list.rest = list.rest){
