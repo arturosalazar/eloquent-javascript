@@ -60,10 +60,10 @@ function nth(list, number){
 
 //nth - recursive
 //use number as a counter, and if number > 0, call nthR again and check the next inner object
-function nthR (list, number){
+function nthRecursive (list, number){
   if (number == 0) return list.value;
   
   if (list.rest === null && number > 0) return undefined;
 
-  if (number > 0) return nthR(list.rest, number-1); 
+  if (number > 0) return nthRecursive(list.rest, number-1); 
 }
