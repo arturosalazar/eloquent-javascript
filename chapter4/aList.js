@@ -43,9 +43,12 @@ function prepend(element,list){
 function nth(list, number){
   let element;
   for (i = 0; i <= number; i++){
+    if (list === null){
+      element = undefined;
+      break;
+    }
     element = list.value;
     list = list.rest;
   }
-  return element; 
+  return element;
 }
-
