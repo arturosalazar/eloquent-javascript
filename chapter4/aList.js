@@ -16,11 +16,13 @@
 
 //arrayToList
 function arrayToList(arr){
-  let obj = null;
-  for (i = 0; i < 3; i++){
-	   obj = {value: i, rest: obj};
+  let list = null;
+  for (i = arr.length-1; i >= 0; i--){
+	   list = {value: arr[i], rest: list};
   }
+  return list;
 }
+
 
 
 //listToArray
