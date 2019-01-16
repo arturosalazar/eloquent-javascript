@@ -12,6 +12,5 @@ let reducer = (accumulator, currentValue) => {
   return accumulator;
 }
 
-arrays.reduce(reducer, [])
-
+console.log(arrays.reduce(reducer, []));
 // → [1, 2, 3, 4, 5, 6]
