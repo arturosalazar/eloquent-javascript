@@ -60,9 +60,10 @@ function dominantDirection(text) {
   if (total == 0) return "No scripts found";
 
   scripts = scripts.map(({name, count}) => {
-    return `${Math.round(count * 100 / total)}% ${name}`;
+    return {name:name, count:Math.round(count * 100 / total)};
   })
 
-  return scripts;
-
+  return scripts.reduce((a,b) => {
+    return a.count < b.count ? b : a;
+  }).name;
 }
