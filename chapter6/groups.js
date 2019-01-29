@@ -1,15 +1,15 @@
 /*
   A set holds a collection of values but does not associate other values with
-  those - just tracks which values are part of the set. A value can be part 
+  those - just tracks which values are part of the set. A value can be part
   of a set only once—adding it again doesn’t have any effect.
-  
-  Write a class called Group (since Set is already taken). 
 
-  Like Set, it has add, delete, and has methods. 
-  Its constructor creates an empty group, 
-  add adds a value to the group (but only if it isn’t already a member), 
-  delete removes its argument from the group (if it was a member), and 
-  has returns a Boolean value indicating whether its argument is a member of 
+  Write a class called Group (since Set is already taken).
+
+  Like Set, it has add, delete, and has methods.
+  Its constructor creates an empty group,
+  add adds a value to the group (but only if it isn’t already a member),
+  delete removes its argument from the group (if it was a member), and
+  has returns a Boolean value indicating whether its argument is a member of
   the group.
   Use the === operator, or something equivalent such as indexOf, to determine
   whether two values are the same.
@@ -22,41 +22,57 @@
 class Group {
 
   //constructor - empty group (array?)
-  constructor (input) {
-      this.group =  [...input];
+  constructor(input) {
+    this.group = [...input];
   }
 
   //check if argument is a member of the group
-  has (argument) {
+  has(argument) {
     return (this.group.indexOf(argument) == -1) ? false : true;
   }
 
   //check if value is member of group. If so, skip. If not, push to the Group
   add(argument) {
-    if (this.has(argument) == true){
+    if (this.has(argument) == true) {
       return;
-    }
-    else {
+    } else {
       this.group.push(argument);
-      return(this.group);
+      return (this.group);
     }
   }
 
   //check if value is member of the group. If not, skip.
   //if so, find the value and delete it from the Group
   delete(argument) {
-    if (this.has(argument) == false){
+    if (this.has(argument) == false) {
       return;
-    }
-    else {
+    } else {
       //finds the index of the argument in array then uses that as
       //first arg for splice to delete
-      this.group.splice(this.group.indexOf(argument),1);
-      return(this.group);
+      this.group.splice(this.group.indexOf(argument), 1);
+      return (this.group);
     }
   }
 
   //static - take iterable object as agrument
-    //create a group that contains all the values produced by iterating over it??
-    //for of? to iterate?
+  //create a group that contains all the values produced by iterating over it??
+  //for of? to iterate?
+  static from(iterableObj) {
+    let holdingArray = [];
+    for (let items of iterableObj) {
+      holdingArray.push(items);
+    }
+    return new Group(holdingArray);
+  }
 }
+
+//'tests' and the desired results
+let group = Group.from([10, 20]);
+console.log(group.has(10));
+// → true
+console.log(group.has(30));
+// → false
+group.add(10);
+group.delete(10);
+console.log(group.has(10));
+// → false
