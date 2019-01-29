@@ -71,3 +71,8 @@ group.add(10);
 group.delete(10);
 console.log(group.has(10));
 // → false
+
+/*
+  TODO - I realized afterwards that this doesn't support an empty group (as in just let group1 = new Group;) 
+  so I need to refactor this a bit so that works
+*/
