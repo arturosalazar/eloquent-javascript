@@ -20,7 +20,7 @@
 
 //class group
 class Group {
-  
+
   //constructor - empty group (array?)
   constructor (input) {
       this.group =  [...input];
@@ -28,15 +28,33 @@ class Group {
 
   //check if argument is a member of the group
   has (argument) {
-    let arr = this.group;
-    return (arr.indexOf(argument) == -1) ? false : true;
+    return (this.group.indexOf(argument) == -1) ? false : true;
   }
 
-  //add - add value to the group ONLY if it isn't already a member
-    //indexOf? to check if it's in the group. Or a for loop to iterate over
-    //and check with ===
+  //check if value is member of group. If so, skip. If not, push to the Group
+  add(argument) {
+    if (this.has(argument) == true){
+      return;
+    }
+    else {
+      this.group.push(argument);
+      return(this.group);
+    }
+  }
 
-  //delete - find the value and delete it from the Group
+  //check if value is member of the group. If not, skip.
+  //if so, find the value and delete it from the Group
+  delete(argument) {
+    if (this.has(argument) == false){
+      return;
+    }
+    else {
+      //finds the index of the argument in array then uses that as
+      //first arg for splice to delete
+      this.group.splice(this.group.indexOf(argument),1);
+      return(this.group);
+    }
+  }
 
   //static - take iterable object as agrument
     //create a group that contains all the values produced by iterating over it??
