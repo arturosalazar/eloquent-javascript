@@ -22,12 +22,15 @@
 class Group {
   
   //constructor - empty group (array?)
-  constructor () {
-      this.group = [];
+  constructor (input) {
+      this.group =  [...input];
   }
 
-  //has Boolena to see if the arg is memeber of the group...maybe make first
-  //so we can use for add?
+  //check if argument is a member of the group
+  has (argument) {
+    let arr = this.group;
+    return (arr.indexOf(argument) == -1) ? false : true;
+  }
 
   //add - add value to the group ONLY if it isn't already a member
     //indexOf? to check if it's in the group. Or a for loop to iterate over
@@ -39,4 +42,3 @@ class Group {
     //create a group that contains all the values produced by iterating over it??
     //for of? to iterate?
 }
-  
