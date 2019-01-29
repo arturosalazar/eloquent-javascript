@@ -57,7 +57,6 @@ class Group {
   //static - take iterable object as argument
   //create a group that contains all the values produced by iterating over it
   static from(iterableObj) {
-    debugger;
     return new Group([...iterableObj]);
   }
 }
