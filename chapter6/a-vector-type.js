@@ -24,10 +24,18 @@ class Vec{
     this.x = x;
     this.y = y;
   }
-  
-  //plus (input) {}
 
-  //minus (input) {}
+  //take another vector obj as input - return a new vector with sum 
+  //of the vectors' x and y values
+  plus(vecObject){
+    return new Vec ((this.x+vecObject.x),(this.y+vecObject.y));
+  }
+
+  //take another vector obj as input - return a new vector with difference 
+  //of the vectors' x and y values
+  minus(vecObject){
+    return new Vec ((this.x-vecObject.x),(this.y-vecObject.y));
+  }
 
   //getter - length of vector - dist between this and 0
 
