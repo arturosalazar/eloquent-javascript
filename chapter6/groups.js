@@ -54,15 +54,11 @@ class Group {
     }
   }
 
-  //static - take iterable object as agrument
-  //create a group that contains all the values produced by iterating over it??
-  //for of? to iterate?
+  //static - take iterable object as argument
+  //create a group that contains all the values produced by iterating over it
   static from(iterableObj) {
-    let holdingArray = [];
-    for (let items of iterableObj) {
-      holdingArray.push(items);
-    }
-    return new Group(holdingArray);
+    debugger;
+    return new Group([...iterableObj]);
   }
 }
 
