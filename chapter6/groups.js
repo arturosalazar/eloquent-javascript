@@ -22,7 +22,7 @@
 class Group {
 
   //constructor - empty group (array?)
-  constructor() {
+  constructor(input) {
     this.group = [];
   }
 
@@ -33,12 +33,7 @@ class Group {
 
   //check if value is member of group. If so, skip. If not, push to the Group
   add(argument) {
-    if (this.has(argument) == true) {
-      return;
-    } else {
-      this.group.push(argument);
-      return (this.group);
-    }
+    if (!this.has(argument)) this.group.push(argument);
   }
 
   //check if value is member of the group. If not, skip.
@@ -50,7 +45,6 @@ class Group {
       //finds the index of the argument in array then uses that as
       //first arg for splice to delete
       this.group.splice(this.group.indexOf(argument), 1);
-      return (this.group);
     }
   }
 
@@ -59,7 +53,7 @@ class Group {
   //method for every element to add it to the new instance. Then return instance
   static from(iterableObj) {
     let newGroup = new Group()
-    for (let elements of iterableObj){
+    for (let elements of iterableObj) {
       newGroup.add(elements);
     }
     return newGroup;
@@ -76,8 +70,3 @@ group.add(10);
 group.delete(10);
 console.log(group.has(10));
 // → false
-
-/*
-  TODO - I realized afterwards that this doesn't support an empty group (as in just let group1 = new Group;) 
-  so I need to refactor this a bit so that works
-*/
