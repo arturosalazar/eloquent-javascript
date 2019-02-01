@@ -23,7 +23,7 @@ class Group {
 
   //constructor - empty group (array?)
   constructor(input) {
-    this.group = [...input];
+    this.group = [];
   }
 
   //check if argument is a member of the group
