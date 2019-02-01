@@ -10,9 +10,16 @@
   its own property by that name?
 */
 
-//Starting Code
-let map = {one: true, two: true, hasOwnProperty: true};
+//We will call the method directly from the Object.prototype object using the
+//call method which will allow us to set the object "map" as the "this" value
+//for Object.prototype
+
+let map = {
+  one: true,
+  two: true,
+  hasOwnProperty: true
+};
 
 // Fix this call
-console.log(map.hasOwnProperty("one"));
+console.log(Object.prototype.hasOwnProperty.call(map, 'one'));
 // → true
