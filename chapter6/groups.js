@@ -60,7 +60,7 @@ class Group {
   static from(iterableObj) {
     let newGroup = new Group()
     for (let elements of iterableObj){
-      newGroup.add(items);
+      newGroup.add(elements);
     }
     return newGroup;
   }
