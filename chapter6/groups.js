@@ -22,7 +22,7 @@
 class Group {
 
   //constructor - empty group (array?)
-  constructor(input) {
+  constructor() {
     this.group = [];
   }
 
@@ -54,10 +54,15 @@ class Group {
     }
   }
 
-  //static - take iterable object as argument
-  //create a group that contains all the values produced by iterating over it
+  //static - take iterable object as agrument
+  //create an instance of the group - iterate over the argument and call add
+  //method for every element to add it to the new instance. Then return instance
   static from(iterableObj) {
-    return new Group([...iterableObj]);
+    let newGroup = new Group()
+    for (let elements of iterableObj){
+      newGroup.add(items);
+    }
+    return newGroup;
   }
 }
 
