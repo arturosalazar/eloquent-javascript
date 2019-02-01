@@ -36,12 +36,10 @@ class Group {
     if (!this.has(argument)) this.group.push(argument);
   }
 
-  //check if value is member of the group. If not, skip.
+  //check if value is member of the group.
   //if so, find the value and delete it from the Group
   delete(argument) {
-    if (this.has(argument) == false) {
-      return;
-    } else {
+    if (this.has(argument) == true) {
       //finds the index of the argument in array then uses that as
       //first arg for splice to delete
       this.group.splice(this.group.indexOf(argument), 1);
